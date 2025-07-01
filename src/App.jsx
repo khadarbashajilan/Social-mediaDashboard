@@ -4,7 +4,7 @@ import inc from './assets/icon-up.svg'
 import Home from './components/Home'
 import Header from './components/Header'
 import Overview from './components/Overview'
-
+import { Context } from './useContext'
 import './index.css'
 
 function App() {
@@ -12,9 +12,11 @@ function App() {
 
   return (
     <>
+        <Context.Provider value={{fb,inc}}>
       <Header></Header>
-      <Home icon1={fb} icon2={inc}></Home>
-      <Overview icon1={fb} icon2={inc}></Overview>
+      <Home ></Home>
+      <Overview></Overview>
+        </Context.Provider>
     </>
   )
 }
